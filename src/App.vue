@@ -9,6 +9,7 @@
         <div>
           <ul class="nav navbar-nav">
             <li class=""><a href="/">主页</a></li>
+            <li class=""><router-link to="md">markdown测试</router-link></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 常用工具
@@ -22,15 +23,26 @@
         </div>
       </div>
     </nav>
+      <a class="btn btn-default" @click="$router.back(-1)">返回上一页</a>
     <router-view></router-view>
     </div>
   </div>
 </template>
 
 <script>
-
   export default {
     name: 'app',
+    mounted: function(){
+
+    },
+    methods:{
+
+    },
+    components: {
+
+
+
+    }
   }
 
 </script>

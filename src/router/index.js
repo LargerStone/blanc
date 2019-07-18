@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Index from '@/page/index'
 import Content from '@/page/content'
 import urlEncode from '@/page/urlEncode'
+import md from '@/page/md'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.min'
 Vue.use(Router)
@@ -20,5 +21,10 @@ export default new Router({
       path: '/urlEncode',
       component: urlEncode
     }
-  ]
+    , {
+      path: '/md',
+      component: md
+    }
+  ],
+
 })

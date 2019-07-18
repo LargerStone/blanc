@@ -3,7 +3,6 @@
 
 	<template>
     <div id="edcode">
-        <a class="btn btn-default" @click="$router.back(-1)">返回上一页</a>
         <div class="row">
           <div class="col-xs-4">
             <textarea class="form-control encode" name="encode" rows="5" required placeholder="请输入加密或者解密文本"></textarea>
