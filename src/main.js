@@ -4,7 +4,8 @@ import router from './router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import $ from 'jquery'
-
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap.min'
 // 引用API文件
 import api from './api/index.js'
 // 将API方法绑定到全局

@@ -30,6 +30,7 @@
 </template>
 
 <script>
+ console.log(document.getElementsByTagName('html')[0].innerHTML)
   export default {
     name: 'app',
     mounted: function(){

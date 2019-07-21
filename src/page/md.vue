@@ -1,17 +1,16 @@
-
-
-
-	<template>
+  <template>
     <div id="md">
-
-<ul v-for="mdtitlelist in mdtitlelist" :key="mdtitlelist">
-  <li @click="findmdtext(mdtitlelist)">{{mdtitlelist}}</li>
-
-</ul>
-<div class="mdText"></div>
-
+      <div class="row">
+        <div class="col-xs-3">
+          <ul class="nav nav-tabs nav-stacked" data-spy="affix" data-offset-top="125" v-for="mdtitlelist in mdtitlelist" :key="mdtitlelist">
+            <li @click="findmdtext(mdtitlelist)"><a href="javascript:;">{{mdtitlelist}}</a></li>
+          </ul>
+        </div>
+        <div class="col-xs-9">
+          <div class="mdText"></div>
+        </div>
+      </div>
     </div>
-
 	</template>
 	<script>
     import marked from 'marked'
@@ -46,7 +45,6 @@
           })
         },
         findmdtext:function (mdtitlelist){
-
           var condition = {"url":mdtitlelist}
           console.log(condition)
           this.$api.post('/php/getMdText.php',condition,function (success){
@@ -57,6 +55,4 @@
         }
       },
     }
-
-
 	</script>
