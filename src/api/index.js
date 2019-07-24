@@ -7,11 +7,17 @@ var axios = require('axios')
 function apiAxios (method, url, params, success) {
   //console.log(method, url, params, success)
   if(params){
-    params = {condition:JSON.stringify(params)}
+    if(window.localStorage.data){
+      params = {condition:JSON.stringify(params),userCode:JSON.stringify(window.localStorage.data)}
+    }else{
+      params = {condition:JSON.stringify(params)}
+    }
+
   }
   axios({
     method: method,
     url: url,
+    dataType: 'JSON',
     data: method === 'POST' || method === 'PUT' ? params : null,
     params: method === 'GET' || method === 'DELETE' ? params : null,
     baseURL: root,

@@ -31,7 +31,7 @@
         encode:function () {
           var encode = $(".encode").val()
           var condition = {"encode":encode,"code":0}
-          this.$api.post('/php/urlencode.php',condition,function (success){
+          this.$api.post('/php/app/urlEncode.php',condition,function (success){
             if(success.error == 1){
               $(".decode").val(success.result)
             }else{
@@ -42,7 +42,7 @@
         decode:function () {
           var encode = $(".encode").val()
           var condition = {"encode":encode,"code":1}
-          this.$api.post('/php/urlencode.php',condition,function (success){
+          this.$api.post('/php/app/urlEncode.php',condition,function (success){
             if(success.error == 1){
               $(".decode").val(success.result)
             }else{

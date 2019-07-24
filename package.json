@@ -19,6 +19,7 @@
     "marked": "^0.7.0",
     "vue": "^2.5.2",
     "vue-axios": "^2.1.4",
+    "vue-layer": "^1.0.2",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
@@ -53,6 +54,8 @@
     "jest": "^22.0.4",
     "jest-serializer-vue": "^0.3.0",
     "jquery": "^3.4.1",
+    "less": "^3.9.0",
+    "less-loader": "^5.0.0",
     "nightwatch": "^0.9.12",
     "node-notifier": "^5.1.2",
     "optimize-css-assets-webpack-plugin": "^3.2.0",
