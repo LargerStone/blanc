@@ -46,8 +46,10 @@
         this.$api.post('/php/app/login.php',condition,function (success){
           if(success.error == 1){
             var ses = window.localStorage
-            ses.setItem("data",success.result)
+            ses.setItem("token",success.result.token)
+            ses.setItem("usertype",success.result.usertype)
             window.location.href ='/'
+
           }else{
             that.$layer.alert(success.msg);
 

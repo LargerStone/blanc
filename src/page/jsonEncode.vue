@@ -15,6 +15,7 @@
         <div class="row">
           <div class="col-xs-12">
             <button class="encodeBtn btn btn-default" @click="jsoncode()">转json</button>
+            <button class="encodeBtn btn btn-default" @click="jsondecode()">还原</button>
           </div>
         </div>
 
@@ -40,6 +41,11 @@
 
 
 
+        },
+        jsondecode:function () {
+          //var condition = $(".text").val()
+          //var x = JSON.parse(condition)
+          //console.log(x.md[1].text)
         }
       },
       created:function(){

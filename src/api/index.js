@@ -18,8 +18,10 @@ function apiAxios (method, url, params, success) {
     method: method,
     url: url,
     dataType: 'JSON',
-    data: method === 'POST' || method === 'PUT' ? params : null,
-    params: method === 'GET' || method === 'DELETE' ? params : null,
+    //data: method === 'POST' || method === 'PUT' ? params : null,
+    //params: method === 'GET' || method === 'DELETE' ? params : null,
+    data:params,
+    //params:params,
     baseURL: root,
   })
     .then(function (res) {
@@ -40,10 +42,10 @@ export default {
   post: function (url, params, success) {
     return apiAxios('POST', url, params, success)
   },
-  put: function (url, params, success) {
-    return apiAxios('PUT', url, params, success)
-  },
-  delete: function (url, params, success) {
-    return apiAxios('DELETE', url, params, success)
-  }
+  // put: function (url, params, success) {
+  //   return apiAxios('PUT', url, params, success)
+  // },
+  // delete: function (url, params, success) {
+  //   return apiAxios('DELETE', url, params, success)
+  // }
 }

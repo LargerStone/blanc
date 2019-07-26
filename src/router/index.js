@@ -3,9 +3,11 @@ import Router from 'vue-router'
 import Index from '@/page/index'
 import Content from '@/page/content'
 import urlEncode from '@/page/urlEncode'
-import md from '@/page/md'
+import article from '@/page/article'
 import login from '@/page/login'
 import jsonEncode from '@/page/jsonEncode'
+import addArticle from '@/page/addArticle'
+
 Vue.use(Router)
 
 export default new Router({
@@ -13,7 +15,10 @@ export default new Router({
   routes: [
     {
       path: '/',
-      component: Index
+      component: Index,
+      meta:{
+        keepAlive:true
+      }
     },{
       path: '/login',
       component: login
@@ -29,8 +34,8 @@ export default new Router({
       //}
     }
     , {
-      path: '/md',
-      component: md
+      path: '/article',
+      component: article
     }
     , {
       path: '/jsonEncode',
@@ -38,6 +43,12 @@ export default new Router({
       //meta:{
       //  needLogin:true
       //}
+    }, {
+      path: '/addArticle',
+      component: addArticle,
+      meta:{
+        needLogin:true
+      }
     }
   ],
 

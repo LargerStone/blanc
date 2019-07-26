@@ -18,19 +18,21 @@ Vue.prototype.$api = api
 Vue.config.productionTip = false
 Vue.use(VueAxios,axios);
 //每次路由切换前进行的方法
+
+/* eslint-disable no-new */
+new Vue({
+  el: '#app',
+  router,
+  template: '<App/>',
+  components: {App},
+})
+
 router.beforeEach((to,from,next)=>{
+  var that = this
   //用来判断和控制登录和注销按钮的显示
-  if(window.localStorage.data){
-    $(".userInterface").show()
-    $(".unLoginUserInterface").hide()
-  }else{
-    $(".userInterface").hide()
-    $(".unLoginUserInterface").show()
-  }
+
   if(to.meta.needLogin){
-    if(window.localStorage.data){
-      $(".userInterface").show()
-      $(".unLoginUserInterface").hide()
+    if(window.localStorage.token){
       next()
     }else{
       console.log('需登录')
@@ -41,12 +43,3 @@ router.beforeEach((to,from,next)=>{
   }
 
 })
-
-/* eslint-disable no-new */
-new Vue({
-  el: '#app',
-  router,
-  template: '<App/>',
-  components: {App},
-})
-
