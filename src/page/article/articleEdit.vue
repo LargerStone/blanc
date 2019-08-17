@@ -6,19 +6,26 @@
 <template>
   <div id="articleEdit">
     <div class="row">
-      <div class="col-xs-3">
-        <ul class="nav nav-tabs nav-stacked" data-spy="affix" data-offset-top="125" v-for="articleList in articleList" :key="articleList.id">
-          <li @click="findArticleText(articleList)">
-            <a href="javascript:;">
-            {{articleList.title}}
-          </a>
-          </li>
-        </ul>
+      <div class="col-1">
+        <nav class="navbar bg-light">
+          <ul class="navbar-nav" >
+            <li class="nav-item" v-for="articleList in articleList" :key="articleList.id" @click="findArticleText(articleList)">
+              <a class="nav-link" href="javascript:;">{{articleList.title}}</a>
+            </li>
+          </ul>
+        </nav>
       </div>
-      <div class="col-xs-9">
-        <div class="mdText" v-html="articleTextShow"></div>
+      <div class="col-11">
+        <div class="container">
+          <div class="mdText" v-html="articleTextShow"></div>
+        </div>
       </div>
     </div>
+
+
+
+
+
 
     <div class="articleEditW">
       <div style="width: 1000px;margin: 0 auto;border: 1px solid #000;padding: 10px">

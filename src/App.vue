@@ -1,48 +1,49 @@
 
 <template>
   <div id="app">
-    <nav class="navbar navbar-default" role="navigation">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand"  href="#">导航</a>
-        </div>
-        <div>
-          <ul class="nav navbar-nav">
-            <li class=""><a href="/">主页</a></li>
-            <li class=""><router-link to="/article">笔记</router-link></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                常用工具
-                <b class="caret"></b>
-              </a>
-              <ul class="dropdown-menu">
-                <li><router-link class="" to="urlEncode">url加密</router-link></li>
-                <li><router-link class="" to="jsonEncode">json</router-link></li>
-              </ul>
-            </li>
-            <li class="dropdown" v-if="userToken == '1'">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                管理员用功能
-                <b class="caret"></b>
-              </a>
-              <ul class="dropdown-menu">
-                <li class=""><router-link to="/addArticle">添加笔记</router-link></li>
-                <li class=""><router-link to="/articleEdit">修改笔记</router-link></li>
-              </ul>
-            </li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li  v-if="userToken == '0'" ><router-link to="login">登录</router-link></li>
-            <li v-if="userToken == '1'" ><a href="javascript:;">登录成功</a></li>
-            <li v-if="userToken == '1'" ><a href="javascript:;" @click="loginOut">注销</a></li>
-          </ul>
-        </div>
+    <!-- 小屏幕上水平导航栏会切换为垂直的 -->
+    <!--width576px-->
+    <nav class="navbar navbar-expand-sm bg-light">
+      <!-- Links -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <router-link class="nav-link" to="/">主页</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="article">笔记</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="urlEncode">url加密</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="jsonEncode">json</router-link>
+        </li>
+        <li v-if="userToken == '1'" class="nav-item">
+          <router-link class="nav-link" to="addArticle">添加笔记</router-link>
+        </li>
+        <li v-if="userToken == '1'" class="nav-item">
+          <router-link class="nav-link" to="articleEdit">修改笔记</router-link>
+        </li>
+      </ul>
+      <div class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+        <li v-if="userToken == '0'" class="nav-item">
+          <router-link class="nav-link" to="login">登录</router-link>
+        </li>
+
+        <li v-if="userToken == '1'" class="nav-item">
+          <a href="javascript:;">登录成功</a>
+        </li>
+
+        <li v-if="userToken == '1'" class="nav-item">
+          <a href="javascript:;" @click="loginOut">注销</a>
+        </li>
       </div>
     </nav>
-    <a class="btn btn-default" v-if="!$route.meta.keepAlive" @click="$router.back(-1)">返回上一页</a>
-    <div class="container">
-    <router-view></router-view>
 
+    <a class="btn btn-default" v-if="!$route.meta.keepAlive" @click="$router.back(-1)">返回上一页</a>
+    <div class="container-fluid">
+    <router-view>
+    </router-view>
     </div>
 
     <footer></footer>

@@ -1,36 +1,4 @@
-# blanc
+目标是做一个个人博客网站
 
-> A Vue.js project
-
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
-
-
-
-
-
-注意webstorm安装需要安装nodejs，npm，webpack，git
+目前以实现管理员登录；文章展示，修改，添加；根据是否登录判断用户能否访问特定路由；根据是否登录显示隐藏部分按钮功能。
+短期目标是在在现有功能上对样式进行改进优化，并把开发过程中的问题和知识点进行记录。
