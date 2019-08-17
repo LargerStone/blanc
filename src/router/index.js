@@ -3,11 +3,11 @@ import Router from 'vue-router'
 import Index from '@/page/index'
 import Content from '@/page/content'
 import urlEncode from '@/page/urlEncode'
-import article from '@/page/article'
+import article from '@/page/article/article'
 import login from '@/page/login'
 import jsonEncode from '@/page/jsonEncode'
-import addArticle from '@/page/addArticle'
-
+import addArticle from '@/page/article/addArticle'
+import articleEdit from '@/page/article/articleEdit'
 Vue.use(Router)
 
 export default new Router({
@@ -46,6 +46,12 @@ export default new Router({
     }, {
       path: '/addArticle',
       component: addArticle,
+      meta:{
+        needLogin:true
+      }
+    }, {
+      path: '/articleEdit',
+      component: articleEdit,
       meta:{
         needLogin:true
       }

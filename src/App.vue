@@ -9,7 +9,7 @@
         <div>
           <ul class="nav navbar-nav">
             <li class=""><a href="/">主页</a></li>
-            <li class=""><router-link to="article">笔记</router-link></li>
+            <li class=""><router-link to="/article">笔记</router-link></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 常用工具
@@ -18,6 +18,16 @@
               <ul class="dropdown-menu">
                 <li><router-link class="" to="urlEncode">url加密</router-link></li>
                 <li><router-link class="" to="jsonEncode">json</router-link></li>
+              </ul>
+            </li>
+            <li class="dropdown" v-if="userToken == '1'">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                管理员用功能
+                <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li class=""><router-link to="/addArticle">添加笔记</router-link></li>
+                <li class=""><router-link to="/articleEdit">修改笔记</router-link></li>
               </ul>
             </li>
           </ul>
@@ -32,19 +42,23 @@
     <a class="btn btn-default" v-if="!$route.meta.keepAlive" @click="$router.back(-1)">返回上一页</a>
     <div class="container">
     <router-view></router-view>
+
     </div>
+
     <footer></footer>
+
+
   </div>
 
 </template>
 
 <script>
+
   export default {
     name: 'app',
     data(){
       return{
-        userToken:""
-
+        userToken:"",
       }
     },
     mounted: function(){
@@ -75,6 +89,11 @@
         //     that.$layer.closeAll();
         //   },
         // })
+
+
+
+
+
       },
       //注销函数
       loginOut:function () {
@@ -86,9 +105,6 @@
 
     },
     components: {
-
-
-
     }
   }
 

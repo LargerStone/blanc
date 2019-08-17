@@ -8,11 +8,11 @@ function apiAxios (method, url, params, success) {
   //console.log(method, url, params, success)
   if(params){
     if(window.localStorage.data){
-      params = {condition:JSON.stringify(params),userCode:JSON.stringify(window.localStorage.data)}
+      params = {"condition":params,userCode:window.localStorage.data}
     }else{
-      params = {condition:JSON.stringify(params)}
+      params = {"condition":params}
     }
-
+    //console.log(JSON.stringify(params))
   }
   axios({
     method: method,

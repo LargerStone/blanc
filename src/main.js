@@ -5,6 +5,7 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import $ from 'jquery'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import 'popper.js'
 import 'bootstrap/dist/js/bootstrap.min'
 
 import layer from 'vue-layer'

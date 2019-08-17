@@ -1,7 +1,7 @@
   <template>
     <div id="addArticle">
       <div class="row">
-        <div class="col-xs-3">111
+        <div class="col-xs-3">
           <!--<ul class="nav nav-tabs nav-stacked" data-spy="affix" data-offset-top="125" v-for="mdtitlelist in mdtitlelist" :key="mdtitlelist.title">-->
             <!--<li @click="findmdtext(mdtitlelist)">-->
               <!--<a href="javascript:;">-->
