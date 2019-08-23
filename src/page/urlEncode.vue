@@ -2,24 +2,21 @@
 
 
 	<template>
-    <div id="edcode">
-        <div class="row">
-          <div class="col-xs-4">
-            <textarea class="form-control encode" name="encode" rows="5" required placeholder="请输入加密或者解密文本"></textarea>
-          </div>
-          <div class="col-xs-4">
-            <textarea class="form-control decode" name="decode" rows="5" placeholder="这里显示的是结果"></textarea>
-          </div>
+    <div class="container">
+      <div id="edcode">
+        <div class="form-group">
+          <label for="encode">请输入加密内容:</label>
+          <textarea class="form-control encode" id="encode" name="encode" rows="5" required placeholder="请输入加密内容"></textarea>
         </div>
-        <div class="row">
-          <div class="col-xs-12">
-            <button class="encodeBtn btn btn-default" @click="encode()">URL加密</button>
-            <button class="decodeBtn btn btn-default" @click="decode()">URL解密</button>
-          </div>
-        </div>
+        <div class="form-group">
+          <label for="decode">请输入解密内容:</label>
+          <textarea class="form-control decode" id="decode" name="decode" rows="5" placeholder="请输入解密内容"></textarea>
+      </div>
 
+          <button class="encodeBtn btn btn-primary" @click="encode()">URL加密</button>
+          <button class="decodeBtn btn btn-primary" @click="decode()">URL解密</button>
+      </div>
     </div>
-
 	</template>
 	<script>
     export default {
@@ -40,13 +37,13 @@
           })
         },
         decode:function () {
-          var encode = $(".encode").val()
+          var encode = $(".decode").val()
           var condition = {"encode":encode,"code":1}
           this.$api.post('/php/app/urlEncode.php',condition,function (success){
             if(success.error == 1){
-              $(".decode").val(success.result)
+              $(".encode").val(success.result)
             }else{
-              $(".decode").val(success.msg)
+              $(".encode").val(success.msg)
             }
           })
 

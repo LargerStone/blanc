@@ -3,7 +3,7 @@
   <div id="app">
     <!-- 小屏幕上水平导航栏会切换为垂直的 -->
     <!--width576px-->
-    <nav class="navbar navbar-expand-sm bg-light">
+    <nav class="navbar navbar-expand-sm bg-light navbar-light">
       <!-- Links -->
       <ul class="navbar-nav">
         <li class="nav-item">
@@ -31,11 +31,11 @@
         </li>
 
         <li v-if="userToken == '1'" class="nav-item">
-          <a href="javascript:;">登录成功</a>
+          <a class="nav-link disabled" href="javascript:;">登录成功</a>
         </li>
 
         <li v-if="userToken == '1'" class="nav-item">
-          <a href="javascript:;" @click="loginOut">注销</a>
+          <a class="nav-link" href="javascript:;" @click="loginOut">注销</a>
         </li>
       </div>
     </nav>
@@ -64,6 +64,7 @@
     },
     mounted: function(){
       this.findUserCode()
+
     },
     methods:{
       findUserCode:function () {

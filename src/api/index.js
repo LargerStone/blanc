@@ -1,7 +1,7 @@
 // 配置API接口地址
 var root;
 //var root = 'http://localhost/'
-process.env.NODE_ENV === 'development' ? root = 'http://localhost/' : root = 'http://www.blanc.moe'
+process.env.NODE_ENV === 'development' ? root = 'http://localhost/' : root = 'http://www.blanc.moe/'
 // 引用axios
 var axios = require('axios')
 function apiAxios (method, url, params, success) {
