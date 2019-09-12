@@ -1,22 +1,23 @@
+
 <style>
   /*.articleEditW{position:fixed;bottom: 0;left:50%;width: 1000px;height:537px;margin-left: -500px;background: #fff}*/
   /*.articleEditW textarea{width: 100%;height:300px;}*/
   /*body{padding-bottom: 500px;}*/
   .articleEditW textarea{width: 100%; min-height: 300px;line-height: 24px;}
-  .textarea{
-    width: 100%;
-    font-size: 0.8rem;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 3px;
-    outline: 0;
-    border: 1px solid #a0b3d6;
-    word-wrap: break-word;
-    overflow-x: hidden;
-    overflow-y: auto;
-    white-space: pre-wrap;
+  /*.textarea{*/
+    /*width: 100%;*/
+    /*font-size: 0.8rem;*/
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+    /*padding: 3px;*/
+    /*outline: 0;*/
+    /*border: 1px solid #a0b3d6;*/
+    /*word-wrap: break-word;*/
+    /*overflow-x: hidden;*/
+    /*overflow-y: auto;*/
+    /*white-space: pre-wrap;*/
 
-  }
+  /*}*/
   .col-5{display: none}
 
 

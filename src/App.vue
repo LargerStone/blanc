@@ -46,6 +46,7 @@
     </router-view>
     </div>
 
+
     <footer></footer>
 
 
@@ -54,7 +55,7 @@
 </template>
 
 <script>
-
+  import './style/md.css'
   export default {
     name: 'app',
     data(){
@@ -102,8 +103,7 @@
         window.localStorage.removeItem('token')
         window.localStorage.removeItem('usertype')
         window.location.reload()
-      }
-
+      },
 
     },
     components: {
