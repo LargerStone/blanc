@@ -102,14 +102,16 @@
         if(articleList){
           that.articleID = articleList.id;
         }
-        this.$api.post('/php/app/showArticleText.php',that.articleID,function (success){
+        var condition = {};
+        condition.id = that.articleID
+        this.$api.post('/php/app/showArticleText.php',condition,function (success){
           if(success.error == 1){
             that.articleTextShow = marked(success.result.text);
             that.articleText = success.result.text;
             that.articleID = success.result.id;
             that.articleTitle=success.result.title;
 
-$(".col-5").show()
+            $(".col-5").show()
 
 
           }else{

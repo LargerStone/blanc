@@ -24,6 +24,12 @@
         <li v-if="userToken == '1'" class="nav-item">
           <router-link class="nav-link" to="articleEdit">修改笔记</router-link>
         </li>
+        <li v-if="userToken == '1'" class="nav-item">
+          <router-link class="nav-link" to="upload">上传附件</router-link>
+        </li>
+        <li v-if="userToken == '1'" class="nav-item">
+          <router-link class="nav-link" to="showFile">查看文件</router-link>
+        </li>
       </ul>
       <div class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
         <li v-if="userToken == '0'" class="nav-item">

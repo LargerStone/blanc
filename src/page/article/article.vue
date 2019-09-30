@@ -49,7 +49,9 @@
         findArticleText:function (articleList){
           var  that= this
           that.articleID = articleList.id
-          this.$api.post('/php/app/showArticleText.php',that.articleID,function (success){
+          var condition = {};
+          condition.id = that.articleID
+          this.$api.post('/php/app/showArticleText.php',condition,function (success){
             if(success.error == 1){
               //$(".mdText").html(marked(success.result.text))
               that.articleTextShow = marked(success.result.text)

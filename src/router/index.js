@@ -8,6 +8,9 @@ import login from '@/page/login'
 import jsonEncode from '@/page/jsonEncode'
 import addArticle from '@/page/article/addArticle'
 import articleEdit from '@/page/article/articleEdit'
+import upload from '@/page/qiniuFile/upload'
+import showFile from '@/page/qiniuFile/showFile'
+
 Vue.use(Router)
 
 export default new Router({
@@ -55,7 +58,20 @@ export default new Router({
       meta:{
         needLogin:true
       }
+    }, {
+      path: '/upload',
+      component: upload,
+      meta:{
+        needLogin:true
+      }
+    }, {
+      path: '/showFile',
+      component: showFile,
+      meta:{
+        needLogin:true
+      }
     }
   ],
 
 })
+
