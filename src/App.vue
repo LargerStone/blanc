@@ -5,35 +5,51 @@
     <!--width576px-->
     <nav class="navbar navbar-expand-sm bg-light navbar-light">
       <!-- Links -->
-      <ul class="navbar-nav">
+      <li class="nav-item">
+        <router-link class="nav-link" to="/">主页</router-link>
+      </li>
+      <div class="navbar-nav flex-row ml-md-auto d-block d-sm-none">
+        <li v-if="userToken == '0'" class="nav-item">
+          <router-link class="nav-link" :to="{name:'/login'}">登录</router-link>
+        </li>
+
+        <li v-if="userToken == '1'" class="nav-item">
+          <a class="nav-link disabled" href="javascript:;">登录成功</a>
+        </li>
+
+        <li v-if="userToken == '1'" class="nav-item">
+          <a class="nav-link" href="javascript:;" @click="loginOut">注销</a>
+        </li>
+      </div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <ul class="navbar-nav collapse navbar-collapse" id="collapsibleNavbar">
         <li class="nav-item">
-          <router-link class="nav-link" to="/">主页</router-link>
+          <router-link class="nav-link" :to="{name:'/article'}">笔记</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" to="article">笔记</router-link>
+          <router-link class="nav-link" :to="{name:'/urlEncode'}">url加密</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" to="urlEncode">url加密</router-link>
-        </li>
-        <li class="nav-item">
-          <router-link class="nav-link" to="jsonEncode">json</router-link>
+          <router-link class="nav-link" :to="{name:'/jsonEncode'}">json</router-link>
         </li>
         <li v-if="userToken == '1'" class="nav-item">
-          <router-link class="nav-link" to="addArticle">添加笔记</router-link>
+          <router-link class="nav-link" :to="{name:'/addArticle'}">添加笔记</router-link>
         </li>
         <li v-if="userToken == '1'" class="nav-item">
-          <router-link class="nav-link" to="articleEdit">修改笔记</router-link>
+          <router-link class="nav-link" :to="{name:'/articleEdit'}">修改笔记</router-link>
         </li>
         <li v-if="userToken == '1'" class="nav-item">
-          <router-link class="nav-link" to="upload">上传附件</router-link>
+          <router-link class="nav-link" :to="{name:'/addproject'}">添加计划</router-link>
         </li>
         <li v-if="userToken == '1'" class="nav-item">
-          <router-link class="nav-link" to="showFile">查看文件</router-link>
+          <router-link class="nav-link" :to="{name:'/showproject'}">展示计划</router-link>
         </li>
       </ul>
-      <div class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+      <div class="navbar-nav flex-row ml-md-auto d-none d-sm-block d-md-flex">
         <li v-if="userToken == '0'" class="nav-item">
-          <router-link class="nav-link" to="login">登录</router-link>
+          <router-link class="nav-link" :to="{name:'/login'}">登录</router-link>
         </li>
 
         <li v-if="userToken == '1'" class="nav-item">

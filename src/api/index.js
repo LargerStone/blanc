@@ -7,12 +7,12 @@ var axios = require('axios')
 function apiAxios (method, url, params, success) {
   //console.log(method, url, params, success)
   if(params){
-    if(window.localStorage.data){
-      params = {"condition":params,userCode:window.localStorage.data}
+    if(window.localStorage.token){
+      params = {"condition":params,"userCode":window.localStorage.token}
     }else{
       params = {"condition":params}
     }
-    //console.log(JSON.stringify(params))
+    //console.log(window.localStorage)
   }
   axios({
     method: method,

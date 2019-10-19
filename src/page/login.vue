@@ -48,7 +48,7 @@
             var ses = window.localStorage
             ses.setItem("token",success.result.token)
             ses.setItem("usertype",success.result.usertype)
-            window.location.href ='/'
+            window.location.href ='/vueDemo'
 
           }else{
             that.$layer.alert(success.msg);
