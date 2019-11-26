@@ -1,22 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/page/index'
-import Content from '@/page/content'
-import urlEncode from '@/page/urlEncode'
-import article from '@/page/article/article'
-import login from '@/page/login'
-import jsonEncode from '@/page/jsonEncode'
-import addArticle from '@/page/article/addArticle'
-import articleEdit from '@/page/article/articleEdit'
-
-
-import addproject from '@/page/project/addproject'
-import editproject from '@/page/project/editproject'
-import showproject from '@/page/project/showproject'
-import editstatus from '@/page/project/editstatus'
-
 Vue.use(Router)
-
 export default new Router({
   // mode:'history',
   routes: [
@@ -29,75 +14,89 @@ export default new Router({
     },{
       path: '/login',
       name: '/login',
-      component: login
-    }
-    ,  {
-      path: '/content',
-      name: '/content',
-      component: Content
+      component: () => import('@/page/login'),
     }, {
       path: '/urlEncode',
       name: '/urlEncode',
-      component: urlEncode,
-      //meta:{
-      //  needLogin:true
-      //}
-    }
-    , {
-      path: '/article',
-      name: '/article',
-      component: article
-    }
-    , {
+      component: () => import('@/page/urlEncode'),
+    }, {
       path: '/jsonEncode',
       name: '/jsonEncode',
-      component: jsonEncode,
-      //meta:{
-      //  needLogin:true
-      //}
-    }, {
+      component: () => import('@/page/jsonEncode'),
+    },
+    /*文章相关路由*/
+    {
+      path: '/article',
+      name: '/article',
+      component: () => import('@/page/article/article'),
+    },  {
       path: '/addArticle',
       name: '/addArticle',
-      component: addArticle,
+      component: () => import('@/page/article/addArticle'),
       meta:{
         needLogin:true
       }
     }, {
       path: '/articleEdit',
       name: '/articleEdit',
-      component: articleEdit,
+      component: () => import('@/page/article/articleEdit'),
       meta:{
         needLogin:true
       }
-    }, {
+    },
+    /*计划相关路由*/
+    {
       path: '/addproject',
       name: '/addproject',
-      component: addproject,
+      component: () => import('@/page/project/addproject'),
       meta:{
         needLogin:true
       }
     }, {
       path: '/editproject/:id+.html',
       name:'/editproject',
-      component: editproject,
+      component: () => import('@/page/project/editproject'),
       meta:{
         needLogin:true
       }
     }, {
       path: '/showproject',
       name: '/showproject',
-      component: showproject,
+      component: () => import('@/page/project/showproject'),
       meta:{
         needLogin:true
       }
     }, {
       path: '/editstatus/:id+.html',
       name: '/editstatus',
-      component: editstatus,
+      component: () => import('@/page/project/editstatus'),
       meta:{
         needLogin:true
       }
-    }
+    },
+    /**/
+    {
+      path: '/addLightNovelContent',
+      name: '/addLightNovelContent',
+      component: () => import('@/page/lightnovel/addLightNovelContent'),
+      meta:{
+        needLogin:true
+      }
+    },{
+      path: '/addLightNovelSerial',
+      name: '/addLightNovelSerial',
+      component: () => import('@/page/lightnovel/addLightNovelSerial'),
+      meta:{
+        needLogin:true
+      }
+    }, {
+      path: '/findLightNovelContent',
+      name: '/findLightNovelContent',
+      component: () => import('@/page/lightnovel/findLightNovelContent'),
+      meta:{
+        needLogin:true
+      }
+    },
 
   ],
 

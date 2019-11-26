@@ -46,6 +46,15 @@
         <li v-if="userToken == '1'" class="nav-item">
           <router-link class="nav-link" :to="{name:'/showproject'}">展示计划</router-link>
         </li>
+        <li v-if="userToken == '1'" class="nav-item">
+          <router-link class="nav-link" :to="{name:'/addLightNovelContent'}">添加轻小说梗概</router-link>
+        </li>
+        <li v-if="userToken == '1'" class="nav-item">
+          <router-link class="nav-link" :to="{name:'/addLightNovelSerial'}">添加轻小说系列</router-link>
+        </li>
+        <li v-if="userToken == '1'" class="nav-item">
+          <router-link class="nav-link" :to="{name:'/findLightNovelContent'}">展示轻小说记录</router-link>
+        </li>
       </ul>
       <div class="navbar-nav flex-row ml-md-auto d-none d-sm-block d-md-flex">
         <li v-if="userToken == '0'" class="nav-item">
